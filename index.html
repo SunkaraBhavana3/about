@@ -20,43 +20,6 @@
       color: #333;
     }
 
-    .navbar {
-      background-color: white;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .navbar .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      color: #333;
-    }
-
-    .navbar .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
-    .navbar nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    .navbar nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-    }
-
     .banner-section {
       background: url('https://images.unsplash.com/photo-1573164574396-e04c0f3f8e73?auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
       height: 350px;
@@ -66,7 +29,13 @@
       text-align: center;
       color: white;
       position: relative;
+      padding-top: 80px;
     }
+@media (max-width: 768px) {
+  .banner-section {
+    padding-top: 100px;
+  }
+}
 
     .banner-section::after {
       content: "";
@@ -152,23 +121,13 @@
     }
 
     .leadership {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  max-width: 700px;
-}
-
-
-
-    .leader-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      max-width: 700px;
     }
 
     .leader-card img {
@@ -186,30 +145,11 @@
       margin-top: 30px;
     }
 
-    .facility {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px #ccc;
-      text-align: center;
-    }
-
     .facility img {
       width: 100%;
       height: 160px;
       object-fit: cover;
       border-radius: 8px;
-      margin: 0 auto;
-    }
-
-    .facility h4 {
-      margin: 10px 0 5px;
-    }
-
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
     }
 
     .testimonial {
@@ -232,65 +172,37 @@
       padding: 20px;
       border-top: 1px solid #eee;
     }
-
-    input[type="email"] {
-      padding: 8px;
-      margin-top: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .subscribe-btn {
-      padding: 8px 14px;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      margin-left: 8px;
-      cursor: pointer;
-    }
-
-    @media (max-width: 600px) {
-      .navbar nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      input[type="email"], .subscribe-btn {
-        width: 100%;
-      }
-
-      .about-container {
-        flex-direction: column;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <div class="navbar">
-    <div class="logo">
-      <img src="logo.png" alt="SDCIT Logo" />
-      SDCIT
+  <!-- Responsive Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="logo.png" alt="SDCIT Logo" height="40" class="me-2">
+        <strong>SDCIT</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/homepage/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/about/">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/group/">Groups</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/about/#leadership">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/about/#infrastructure">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/about/#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://sunkarabhavana3.github.io/contact/">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="groups.html">Groups</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#infrastructure">Infrastructure</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  </nav>
 
   <!-- Banner -->
   <section class="banner-section">
     <div class="banner-text">
-      <h1>Welcome to Sarojini Devi College of Information Technology</h1>
+      <h1>Welcome to SD College of Information Technology</h1>
       <p>Shaping Future Leaders in Technology & Business for a Dynamic World.</p>
     </div>
   </section>
@@ -401,7 +313,7 @@
   <section class="cta" id="contact">
     <h2>Ready to Join SDCIT?</h2>
     <p>Reach out today to learn more about admissions, programs, and campus life.</p>
-    <a href="contact.html" class="btn btn-primary">Contact Admissions</a>
+    <a href="https://sunkarabhavana3.github.io/contact/" class="btn btn-primary">Contact Admissions</a>
   </section>
 
   <!-- Footer -->
@@ -423,6 +335,7 @@
       </div>
     </div>
   </footer>
+  <!-- Your Existing Content Goes Here (Banner, About, Leadership, etc.) -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
